@@ -45,6 +45,17 @@ while (tweets_displayed < total_number_of_tweets)
 end
 
 
+# using each method:
+all_tweets = [
+  "My first tweet",
+  "My second tweet",
+  "My third tweet",
+  "I have the world's most boring tweets"
+]
+
+all_tweets.each do |tweet|
+  puts tweets
+end  
 
 
 
