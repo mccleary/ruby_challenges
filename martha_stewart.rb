@@ -1,6 +1,6 @@
-# Using Nokogiri to csrape the html for a Martha Stewart sandwich recipe
+# Using Nokogiri to scrape the html for a Martha Stewart sandwich recipe
 
-# require the Nokogiri gem and its dependency
+# require the Nokogiri gem and its dependencies
 require "nokogiri"
 require "open-uri"
 
@@ -14,15 +14,14 @@ doc = Nokogiri::HTML(open("http://www.marthastewart.com/312598/brick-pressed-san
 
 
 # shows just the text from the list of ingredients from the ul class
+list = doc.css("components-data")
 # list = doc.css(".component-text").inner_html
 # puts list
 
-
-
-# ************* include below for final search
 puts "This is a great sandwich recipe from Martha Stewart"
 puts doc.title
 
+# lists just the ingredients text
 list = doc.css(".component-text").inner_html
 puts list
 
@@ -30,11 +29,7 @@ puts list
 # directions = doc.css("ul.directions-item-text").inner_html
 # puts directions
 
-# cook = doc.css(".cooks-note")
-# puts cook
-
-
-
-
-
-# puts doc.css(".page-section-title").inner_html
+# loop through the ingredients and lists just the ingredients text
+# list.each do |n|
+#   puts n.inner_html
+# end
